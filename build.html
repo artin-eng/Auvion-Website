@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auvion — Build my app</title>
+  <link rel="stylesheet" href="assets/auvion.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
+  <style>
+    /* ───────────────────────── Build page ───────────────────────── */
+    .build-page {
+      padding: 96px 0 96px;
+    }
+    .build-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+    @media (max-width: 780px) { .build-shell { padding: 0 24px; } }
+
+    .build-hero {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+    .build-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .build-hero .eyebrow .lbl {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fg-3);
+      line-height: 1;
+    }
+    .build-hero .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--emerald-700);
+      box-shadow: 0 0 0 4px rgba(31, 77, 59, 0.12);
+      display: inline-block;
+      flex: 0 0 6px;
+    }
+    .build-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(44px, 5.8vw, 80px);
+      line-height: 1.02;
+      letter-spacing: -0.028em;
+      color: var(--fg-1);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .build-hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--emerald-800);
+    }
+    .build-hero .sub {
+      margin: 24px auto 0;
+      max-width: 560px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--fg-3);
+      text-wrap: pretty;
+    }
+
+    /* ── Three selling points ── */
+    .selling {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: 18px 24px;
+      max-width: 1080px;
+      margin: 0 auto 64px;
+    }
+    .selling .sp {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 3;
+      padding: 28px 28px 32px;
+      background:
+        linear-gradient(180deg, rgba(248, 245, 238, 0.92), rgba(244, 241, 236, 0.88));
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid var(--border-default);
+      border-radius: 22px;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 1px 1px rgba(10, 10, 11, 0.03),
+        0 14px 32px -22px rgba(10, 10, 11, 0.10);
+    }
+    .selling .sp .num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--emerald-700);
+      align-self: end;
+    }
+    .selling .sp h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 24px;
+      letter-spacing: -0.018em;
+      color: var(--fg-1);
+      margin: 8px 0 0;
+      line-height: 1.15;
+      text-wrap: balance;
+      align-self: start;
+    }
+    .selling .sp p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--fg-3);
+      margin: 14px 0 0;
+      text-wrap: pretty;
+      align-self: start;
+    }
+    @media (max-width: 860px) {
+      .selling { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .selling .sp { grid-row: auto; grid-template-rows: auto; }
+    }
+
+    /* ── Calendly embed card ── */
+    .calendly-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px clamp(20px, 3vw, 40px);
+      background:
+        linear-gradient(180deg, rgba(248, 245, 238, 0.92), rgba(244, 241, 236, 0.88));
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid var(--border-default);
+      border-radius: 22px;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 1px 1px rgba(10, 10, 11, 0.03),
+        0 22px 60px -36px rgba(10, 10, 11, 0.14);
+    }
+    .calendly-wrap .label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fg-3);
+      text-align: center;
+    }
+    .calendly-wrap h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.022em;
+      color: var(--fg-1);
+      margin: 14px 0 28px;
+      text-align: center;
+      text-wrap: balance;
+    }
+    .calendly-wrap h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--emerald-800);
+    }
+
+    .calendly-inline-widget {
+      min-width: 320px;
+      width: 100%;
+      height: 700px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      mix-blend-mode: multiply;
+    }
+    /* iframe Calendly injects — kill its own white surround */
+    .calendly-inline-widget iframe {
+      background: transparent !important;
+      border-radius: 16px;
+    }
+
+    /* fallback button when iframe blocked */
+    .calendly-fallback {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--fg-3);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .calendly-fallback a {
+      display: inline-flex;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV (same shell) -->
+<header class="nav" id="nav">
+  <div class="shell nav-inner">
+    <a href="index.html" class="nav-logo"><span>AUVION</span></a>
+    <nav class="nav-right">
+      <div class="has-menu">
+        <a class="nav-link" href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" aria-haspopup="true">
+          Help
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5 L6 7.5 L9 4.5"/></svg>
+        </a>
+        <div class="menu" role="menu">
+          <a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3 H13 V13 H3 Z"/><path d="M5.5 6 H10.5 M5.5 8.5 H9 M5.5 11 H8"/></svg>
+            <span>Help articles<span class="menu-meta">Guides, walkthroughs, FAQs</span></span>
+          </a>
+          <a href="contact.html" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4 H13.5 V12 H2.5 Z"/><path d="M2.5 4 L8 8.5 L13.5 4"/></svg>
+            <span>Contact us<span class="menu-meta">artin@auvion.app</span></span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-link" href="https://admin.auvion.app" target="_blank" rel="noopener">Log in</a>
+      <a class="auvion-cta" href="build.html">
+        <span>Build my app</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE -->
+<section class="build-page">
+  <div class="build-shell">
+
+    <a class="legal-back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to Auvion
+    </a>
+
+    <div class="build-hero">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span class="lbl">A short walkthrough</span>
+      </div>
+      <h1>See your clinic, <em>in every patient's pocket.</em></h1>
+      <p class="sub">Book a walkthrough. We'll preview your branded app, built for your clinic.</p>
+    </div>
+
+    <!-- Three selling points -->
+    <div class="selling">
+      <div class="sp">
+        <div class="num">i.</div>
+        <h3>Higher client retention.</h3>
+        <p>Patients stay longer when the clinic lives in their pocket.</p>
+      </div>
+      <div class="sp">
+        <div class="num">ii.</div>
+        <h3>Higher average order value.</h3>
+        <p>Smarter offers and pay-in-4 lift basket size at the chair.</p>
+      </div>
+      <div class="sp">
+        <div class="num">iii.</div>
+        <h3>Higher order frequency.</h3>
+        <p>Memberships and rewards turn one visit into many.</p>
+      </div>
+    </div>
+
+    <!-- Calendly embed -->
+    <div class="calendly-wrap">
+      <div class="label">Schedule</div>
+      <h2>Pick a window <em>that works.</em></h2>
+
+      <div class="calendly-inline-widget" data-url="https://calendly.com/artin-auvion/60min?primary_color=1f4d3b&background_color=fbf9f5&text_color=0a0a0b&hide_gdpr_banner=1"></div>
+
+      <noscript>
+        <div class="calendly-fallback">
+          Calendly requires JavaScript to load.<br/>
+          <a class="auvion-cta" href="https://calendly.com/artin-auvion/60min" target="_blank" rel="noopener">
+            <span>Open Calendly</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </noscript>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">AUVION</div>
+        <p class="footer-tag">Your clinic, in every patient's pocket.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener">Help articles</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-right">
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:artin@auvion.app">artin@auvion.app</a>
+        </div>
+        <div>© 2026 Auvion, Inc. — Made with quiet intent.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Calendly widget script -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+  // Sticky-nav border
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // CTA sheen
+  for (const btn of document.querySelectorAll('.auvion-cta')) {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.setProperty('--mx', '30%');
+      btn.style.setProperty('--my', '0%');
+    });
+  }
+</script>
+
+</body>
+</html>

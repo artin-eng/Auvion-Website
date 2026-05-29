@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auvion — Contact</title>
+  <link rel="stylesheet" href="assets/auvion.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
+  <style>
+    /* Contact — deliberate emptiness, email floating in the middle */
+    .contact-stage {
+      min-height: calc(100vh - 86px); /* viewport minus nav */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 24px;
+    }
+    .contact-stage .eyebrow {
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+    .contact-stage .ask {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.022em;
+      color: var(--fg-3);
+      margin: 0 0 28px;
+    }
+    .contact-stage .ask em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--fg-2);
+    }
+    .contact-stage .email {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(22px, 3vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.022em;
+      color: var(--emerald-700);
+      text-decoration: none;
+      transition: color 220ms var(--ease-out);
+      display: inline-block;
+    }
+    .contact-stage .email:hover { color: var(--emerald-800); }
+    .contact-stage .note {
+      margin-top: 56px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--fg-4);
+      letter-spacing: -0.003em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV — same as home -->
+<header class="nav" id="nav">
+  <div class="shell nav-inner">
+    <a href="index.html" class="nav-logo"><span>AUVION</span></a>
+    <nav class="nav-right">
+      <div class="has-menu">
+        <a class="nav-link" href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" aria-haspopup="true">
+          Help
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5 L6 7.5 L9 4.5"/></svg>
+        </a>
+        <div class="menu" role="menu">
+          <a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3 H13 V13 H3 Z"/><path d="M5.5 6 H10.5 M5.5 8.5 H9 M5.5 11 H8"/></svg>
+            <span>Help articles<span class="menu-meta">Guides, walkthroughs, FAQs</span></span>
+          </a>
+          <a href="contact.html" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4 H13.5 V12 H2.5 Z"/><path d="M2.5 4 L8 8.5 L13.5 4"/></svg>
+            <span>Contact us<span class="menu-meta">artin@auvion.app</span></span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-link" href="https://admin.auvion.app" target="_blank" rel="noopener">Log in</a>
+      <a class="auvion-cta" href="build.html">
+        <span>Build my app</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- STAGE — empty space + email -->
+<main class="contact-stage">
+  <span class="eyebrow">Get in touch</span>
+  <a class="email" href="mailto:artin@auvion.app">artin@auvion.app</a>
+  <p class="note">Usually within the same day.</p>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">AUVION</div>
+        <p class="footer-tag">Your clinic, in every patient's pocket.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener">Help articles</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-right">
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:artin@auvion.app">artin@auvion.app</a>
+        </div>
+        <div>© 2026 Auvion, Inc. — Made with quiet intent.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  for (const btn of document.querySelectorAll('.auvion-cta')) {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.setProperty('--mx', '30%');
+      btn.style.setProperty('--my', '0%');
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auvion — Your clinic, in every patient's pocket.</title>
+  <link rel="stylesheet" href="assets/auvion.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#FBF9F5">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FBF9F5"/>
+    <polygon points="600,250 860,420 340,420" fill="#E5DECC" stroke="#0A0A0B" stroke-opacity="0.15" stroke-width="3"/>
+    <rect x="360" y="430" width="480" height="26" rx="3" fill="#ECE6D9" stroke="#0A0A0B" stroke-opacity="0.12" stroke-width="2"/>
+    <g fill="#0A0A0B">
+      <rect x="400" y="470" width="60" height="120" rx="10"/>
+      <rect x="490" y="470" width="60" height="120" rx="10"/>
+      <rect x="650" y="470" width="60" height="120" rx="10"/>
+      <rect x="740" y="470" width="60" height="120" rx="10"/>
+    </g>
+    <rect x="370" y="592" width="460" height="20" rx="3" fill="#ECE6D9" stroke="#0A0A0B" stroke-opacity="0.12" stroke-width="2"/>
+    <text x="600" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="300" letter-spacing="14" fill="#1F4D3B">AUVION</text>
+  </svg>
+</template>
+
+<!-- =====================================================
+     NAV
+     ===================================================== -->
+<header class="nav" id="nav">
+  <div class="shell nav-inner">
+    <a href="#" class="nav-logo">
+      <span>AUVION</span>
+    </a>
+    <nav class="nav-right">
+      <div class="has-menu">
+        <a class="nav-link" href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" aria-haspopup="true">
+          Help
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5 L6 7.5 L9 4.5"/></svg>
+        </a>
+        <div class="menu" role="menu">
+          <a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 3 H13 V13 H3 Z"/>
+              <path d="M5.5 6 H10.5 M5.5 8.5 H9 M5.5 11 H8"/>
+            </svg>
+            <span>
+              Help articles
+              <span class="menu-meta">Guides, walkthroughs, FAQs</span>
+            </span>
+          </a>
+          <a href="contact.html" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2.5 4 H13.5 V12 H2.5 Z"/>
+              <path d="M2.5 4 L8 8.5 L13.5 4"/>
+            </svg>
+            <span>
+              Contact us
+              <span class="menu-meta">artin@auvion.app</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-link" href="https://admin.auvion.app" target="_blank" rel="noopener">Log in</a>
+      <a class="auvion-cta" href="build.html">
+        <span>Build my app</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO + TEMPLE
+     ===================================================== -->
+<section class="hero">
+  <div class="shell">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span class="eyebrow">Auvion &nbsp;·&nbsp; The retention engine</span>
+    </div>
+    <h1>
+      Built for revenue. <br />
+      <em>Designed for retention.</em>
+    </h1>
+    <p class="hero-sub">An AI-powered patient app that turns your clinic into a 24/7 revenue engine,  standing on four pillars of automated growth.</p>
+  </div>
+</section>
+
+<section class="temple-wrap" id="pillars">
+  <div class="shell">
+    <div class="temple">
+
+      <div class="temple-architecture">
+
+      <!-- PEDIMENT (triangle, marble) -->
+      <div class="pediment-row">
+        <div class="pediment">
+          <div class="marble marble-inner"></div>
+          <div class="pediment-detail">
+            <svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="#3A3D41" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22 V8" />
+              <path d="M12 14 C 8 13, 6 10, 6 7" />
+              <path d="M12 14 C 16 13, 18 10, 18 7" />
+              <path d="M12 10 C 9 9, 7.5 7, 7.5 5" />
+              <path d="M12 10 C 15 9, 16.5 7, 16.5 5" />
+            </svg>
+            <span class="word">— the four pillars —</span>
+            <svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="#3A3D41" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: scaleX(-1);">
+              <path d="M12 22 V8" />
+              <path d="M12 14 C 8 13, 6 10, 6 7" />
+              <path d="M12 14 C 16 13, 18 10, 18 7" />
+              <path d="M12 10 C 9 9, 7.5 7, 7.5 5" />
+              <path d="M12 10 C 15 9, 16.5 7, 16.5 5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARCHITRAVE (beam under pediment) -->
+      <div class="architrave marble">
+        <div class="architrave-triglyphs">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="architrave-engraving">INTERACTIVE&nbsp;&nbsp;PROTOTYPES&nbsp;&nbsp;BELOW</div>
+      </div>
+
+      <!-- COLONNADE -->
+      <div class="colonnade">
+
+        <!-- COLUMN 1 — AUTOMATED OFFERS -->
+        <div class="column">
+          <div class="capital marble"></div>
+          <div class="phone phone--bare">
+            <div class="screen has-embed">
+              <iframe class="proto-embed" style="border: none; background: transparent;" loading="lazy" data-src="https://embed.figma.com/proto/oZVkBlKMUWQE8HmZutJzA3/Auvion---all-pages?node-id=5-1562&starting-point-node-id=5:1562&scaling=scale-down-width&content-scaling=fixed&hide-ui=1&embed-host=share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="base marble"></div>
+        </div>
+
+        <!-- COLUMN 2 — MEMBERSHIPS -->
+        <div class="column">
+          <div class="capital marble"></div>
+          <div class="phone phone--bare">
+            <div class="screen has-embed">
+              <iframe class="proto-embed" style="border: none; background: transparent;" loading="lazy" data-src="https://embed.figma.com/proto/oZVkBlKMUWQE8HmZutJzA3/Auvion---all-pages?node-id=6-3667&starting-point-node-id=6:3667&scaling=scale-down-width&content-scaling=fixed&hide-ui=1&embed-host=share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="base marble"></div>
+        </div>
+
+        <!-- COLUMN 3 — FINANCING -->
+        <div class="column">
+          <div class="capital marble"></div>
+          <div class="phone phone--bare">
+            <div class="screen has-embed">
+              <iframe class="proto-embed" style="border: none; background: transparent;" loading="lazy" data-src="https://embed.figma.com/proto/oZVkBlKMUWQE8HmZutJzA3/Auvion---all-pages?node-id=6-2626&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A2626&hide-ui=1&embed-host=share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="base marble"></div>
+        </div>
+
+        <!-- COLUMN 4 — REWARDS -->
+        <div class="column">
+          <div class="capital marble"></div>
+          <div class="phone phone--bare">
+            <div class="screen has-embed">
+              <iframe class="proto-embed" style="border: none; background: transparent;" loading="lazy" data-src="https://embed.figma.com/proto/oZVkBlKMUWQE8HmZutJzA3/Auvion---all-pages?node-id=6-3256&starting-point-node-id=6:3256&scaling=scale-down-width&content-scaling=fixed&hide-ui=1&embed-host=share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="base marble"></div>
+        </div>
+
+      </div>
+
+      <!-- STYLOBATE + STEREOBATE -->
+      <div class="stylobate marble">
+        <div class="stylobate-engraving">SHOULD&nbsp;&nbsp;THE&nbsp;&nbsp;PROTOTYPES&nbsp;&nbsp;HESITATE&nbsp;&nbsp;·&nbsp;&nbsp;A&nbsp;&nbsp;REFRESH&nbsp;&nbsp;RESTORES&nbsp;&nbsp;THEM</div>
+      </div>
+      <div class="stereobate marble"></div>
+
+      </div><!-- /.temple-architecture -->
+
+      <!-- LABELS UNDER THE TEMPLE -->
+      <div class="pillar-labels">
+        <div class="pl">
+          <div class="num">i.</div>
+          <div class="name">Automated offers</div>
+          <div class="blurb">Our AI studies each patient's history and habits — then sends the right offer, to the right person, at the right hour.</div>
+          <ul class="pl-stats">
+            <li><span class="pl-fig">+889<i>%</i></span><span class="pl-cap">Higher conversion rate<br/>than email &amp; SMS</span></li>
+          </ul>
+        </div>
+        <div class="pl">
+          <div class="num">ii.</div>
+          <div class="name">Memberships</div>
+          <div class="blurb">The cleanest way to sell memberships in aesthetics — recurring billing and monthly redeemable treatments, handled end to end.</div>
+          <ul class="pl-stats">
+            <li><span class="pl-fig">44<i>%</i></span><span class="pl-cap">Marginal increase in average<br/>patient spend annually</span></li>
+            <li><span class="pl-fig">3<i>×</i></span><span class="pl-cap">Enterprise value<br/>from strong ARR<sup>*</sup></span></li>
+          </ul>
+        </div>
+        <div class="pl">
+          <div class="num">iii.</div>
+          <div class="name">Financing</div>
+          <div class="blurb">
+            Pay-in-4 at the chair. Bigger ticket sizes without the upfront friction.
+            <div class="pl-partner">
+              <span class="pl-partner-eyebrow">Auvion</span>
+              <span class="pl-partner-x">×</span>
+              <img src="assets/klarna-badge.png" alt="Klarna" />
+            </div>
+          </div>
+          <ul class="pl-stats">
+            <li><span class="pl-fig">+18<i>%</i></span><span class="pl-cap">Lift in purchasing conversions<br/>with treat now, pay later</span></li>
+          </ul>
+        </div>
+        <div class="pl">
+          <div class="num">iv.</div>
+          <div class="name">Rewards</div>
+          <div class="blurb">Hold every patient inside a quiet loop of loyalty — more referrals, more reviews, more late-night repeat purchases.</div>
+          <ul class="pl-stats">
+            <li><span class="pl-fig">46<i>%</i></span><span class="pl-cap">Of first-time treatment purchases<br/>driven by mobile rewards</span></li>
+            <li><span class="pl-fig">+52</span><span class="pl-cap">Average Google reviews<br/>in first 90 days</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     3 EASY STEPS — animated, Auvion-branded
+     ===================================================== -->
+<section class="steps" id="steps">
+  <div class="shell">
+    <div class="steps-head">
+      <h2>Three quick steps. <em>One luxury app.</em></h2>
+      <p class="sub">Free trial. Preview your clinic's app today.</p>
+    </div>
+
+    <div class="steps-grid">
+
+      <!-- STEP 1 -->
+      <div class="step-card">
+        <div class="step-frame">
+          <span class="frame-eyebrow">Step · 01</span>
+          <span class="frame-mark">AUVION</span>
+          <div class="s1">
+            <div class="s1-site">
+              <div class="url"><i></i><i></i><i></i></div>
+              <div class="ll w70"></div>
+              <div class="ll w50"></div>
+              <div class="ll w85"></div>
+              <div class="ll w40"></div>
+              <div class="s1-laser"></div>
+            </div>
+            <div class="s1-arrow"></div>
+            <div class="s1-phone">
+              <div class="pscreen">
+                <div class="pbar full" style="width:60%;"></div>
+                <div class="pbar" style="width:90%;"></div>
+                <div class="pbar" style="width:70%;"></div>
+                <div class="pbar full" style="width:40%;"></div>
+                <div class="pbar" style="width:80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="step-num">i.</div>
+          <h3 class="step-title">Auvion imports your brand.</h3>
+          <p class="step-body">Drop in your URL. We scrape logo, colours, services and pricing — and assemble your app in the brand you already own.</p>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-card">
+        <div class="step-frame">
+          <span class="frame-eyebrow">Step · 02</span>
+          <span class="frame-mark">AUVION</span>
+          <div class="s2">
+            <div class="s2-stores">
+              <div class="s2-store"><span class="ddot"></span><span>App Store</span></div>
+              <div class="s2-store"><span class="ddot"></span><span>Google Play</span></div>
+            </div>
+            <div class="s2-phone">
+              <div class="scr2">
+                <div class="ic"></div>
+                <div class="lbl">Installing</div>
+                <div class="prog"></div>
+                <div class="lbl" style="margin-top:auto; font-size:7px;">v 1.0 · 24h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="step-num">ii.</div>
+          <h3 class="step-title">Your app, in 24 hours.</h3>
+          <p class="step-body">We publish it under your name. Patients download it from the App Store and Google Play — your clinic, in their pocket.</p>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-card">
+        <div class="step-frame">
+          <span class="frame-eyebrow">Step · 03</span>
+          <span class="frame-mark">AUVION</span>
+          <div class="s3">
+            <span class="s3-eyebrow">MRR &nbsp;·&nbsp; This month</span>
+            <div class="s3-figure">$48,240</div>
+            <div class="s3-spark">
+              <svg viewBox="0 0 240 80" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2A6750" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#2A6750" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 66 L30 60 L60 56 L90 48 L120 42 L150 32 L180 22 L210 14 L240 6 L240 80 L0 80 Z"
+                      fill="url(#sparkfill)"/>
+                <path d="M0 66 L30 60 L60 56 L90 48 L120 42 L150 32 L180 22 L210 14 L240 6"
+                      fill="none" stroke="#1F4D3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="240" cy="6" r="3" fill="#1F4D3B"/>
+                <circle cx="240" cy="6" r="6" fill="#1F4D3B" opacity="0.18">
+                  <animate attributeName="r" values="4;9;4" dur="2.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.30;0;0.30" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="step-num">iii.</div>
+          <h3 class="step-title">Sales arrive while you sleep.</h3>
+          <p class="step-body">Open at 6&thinsp;pm. Selling at midnight. The app does the talking — and the booking, the upsell, and the rebill.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FINAL CTA
+     ===================================================== -->
+<section class="final-cta">
+  <div class="shell">
+    <h2>Your clinic. Your brand. <em>Your app.</em></h2>
+    <p class="sub">Your app, previewed in under a day.</p>
+    <a class="auvion-cta lg" href="build.html">
+      <span>Build my app</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER + LEGAL
+     ===================================================== -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">AUVION</div>
+        <p class="footer-tag">Your clinic, in every patient's pocket.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener">Help articles</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-right">
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:artin@auvion.app">artin@auvion.app</a>
+        </div>
+        <div>© 2026 Auvion, Inc. — Made with quiet intent.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky-nav border on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // CTA — emerald sheen tracks cursor
+  for (const btn of document.querySelectorAll('.auvion-cta')) {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.setProperty('--mx', '30%');
+      btn.style.setProperty('--my', '0%');
+    });
+  }
+
+  // Figma proto embeds — load ONE AT A TIME so we don't overwhelm the
+  // browser's per-host connection cap (or Figma's embed runtime) by booting
+  // four heavy WebGL apps at once. Each iframe starts only after the previous
+  // one fires `load` (or a timeout fallback), and stalled ones auto-retry.
+  (function () {
+    const embeds = Array.from(document.querySelectorAll('iframe.proto-embed[data-src]'));
+    if (!embeds.length) return;
+
+    const STALL_MS = 14000;   // give up waiting and move on after this
+    const RETRY_MS = 9000;    // if an iframe never fires load, reload it once
+
+    function loadOne(i) {
+      if (i >= embeds.length) return;
+      const frame = embeds[i];
+      let advanced = false;
+      const next = () => { if (!advanced) { advanced = true; loadOne(i + 1); } };
+
+      let retried = false;
+      const watchdog = setTimeout(() => {
+        // stalled — kick the next one off, and try reloading this frame once
+        next();
+        if (!retried) {
+          retried = true;
+          const src = frame.getAttribute('src');
+          if (src) { frame.removeAttribute('src'); frame.offsetHeight; frame.src = src; }
+        }
+      }, RETRY_MS);
+
+      frame.addEventListener('load', () => {
+        clearTimeout(watchdog);
+        // small breather between heavy embeds
+        setTimeout(next, 350);
+      });
+
+      // hard ceiling in case load never fires at all
+      setTimeout(next, STALL_MS);
+
+      frame.src = frame.getAttribute('data-src');
+    }
+
+    // only begin once the colonnade is near the viewport
+    const start = () => loadOne(0);
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries, obs) => {
+        if (entries.some(e => e.isIntersecting)) { obs.disconnect(); start(); }
+      }, { rootMargin: '300px' });
+      io.observe(embeds[0].closest('.colonnade') || embeds[0]);
+    } else {
+      start();
+    }
+  })();
+</script>
+
+</body>
+</html>
