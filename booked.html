@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <title>Auvion — You're booked</title>
+  <link rel="stylesheet" href="assets/auvion.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
+  <style>
+    /* Booking confirmation — quiet arrival, then the explainer */
+    .booked-stage {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 132px 24px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* the seal: a quiet emerald mark that draws itself in */
+    .booked-seal {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in srgb, var(--emerald-700) 28%, transparent);
+      background: color-mix(in srgb, var(--emerald-700) 7%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      animation: seal-in 620ms var(--ease-out) both;
+    }
+    .booked-seal svg { width: 28px; height: 28px; }
+    .booked-seal svg path {
+      stroke: var(--emerald-700);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 28;
+      stroke-dashoffset: 28;
+      animation: tick 520ms var(--ease-out) 320ms forwards;
+    }
+    @keyframes seal-in {
+      from { opacity: 0; transform: scale(0.82); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes tick { to { stroke-dashoffset: 0; } }
+
+    .booked-stage .eyebrow { display: inline-block; margin-bottom: 24px; }
+
+    .booked-stage h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.04;
+      letter-spacing: -0.026em;
+      color: var(--fg-2);
+      margin: 0 0 22px;
+    }
+    .booked-stage h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--emerald-700);
+    }
+
+    .booked-stage .lede {
+      font-family: var(--font-body);
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.6;
+      letter-spacing: -0.006em;
+      color: var(--fg-4);
+      max-width: 46ch;
+      margin: 0 0 64px;
+      text-wrap: pretty;
+    }
+
+    /* divider tag above the video — echoes the temple's '— the four pillars —' */
+    .video-tag {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .video-tag::before,
+    .video-tag::after {
+      content: "";
+      width: 56px;
+      height: 1px;
+      background: color-mix(in srgb, var(--fg-2) 16%, transparent);
+    }
+    .video-tag .word {
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fg-5, var(--fg-4));
+    }
+
+    /* the player — framed like a tablet on the marble */
+    .video-frame {
+      width: 100%;
+      max-width: 760px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0A0A0B;
+      border: 1px solid color-mix(in srgb, var(--fg-2) 12%, transparent);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.5) inset,
+        0 30px 60px -28px rgba(10,10,11,0.32),
+        0 8px 20px -12px rgba(10,10,11,0.22);
+    }
+    .video-aspect {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    .video-aspect iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      margin-top: 22px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--fg-4);
+      letter-spacing: -0.003em;
+    }
+
+    /* next steps + return */
+    .booked-actions {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+    .ghost-link {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--fg-3);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: color 200ms var(--ease-out);
+    }
+    .ghost-link svg { width: 14px; height: 14px; }
+    .ghost-link:hover { color: var(--emerald-800, var(--emerald-700)); }
+
+    @media (max-width: 640px) {
+      .booked-stage { padding-top: 104px; }
+      .booked-stage .lede { margin-bottom: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV — same as home -->
+<header class="nav" id="nav">
+  <div class="shell nav-inner">
+    <a href="index.html" class="nav-logo"><span>AUVION</span></a>
+    <nav class="nav-right">
+      <div class="has-menu">
+        <a class="nav-link" href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" aria-haspopup="true">
+          Help
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5 L6 7.5 L9 4.5"/></svg>
+        </a>
+        <div class="menu" role="menu">
+          <a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3 H13 V13 H3 Z"/><path d="M5.5 6 H10.5 M5.5 8.5 H9 M5.5 11 H8"/></svg>
+            <span>Help articles<span class="menu-meta">Guides, walkthroughs, FAQs</span></span>
+          </a>
+          <a href="contact.html" role="menuitem">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4 H13.5 V12 H2.5 Z"/><path d="M2.5 4 L8 8.5 L13.5 4"/></svg>
+            <span>Contact us<span class="menu-meta">artin@auvion.app</span></span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-link" href="https://admin.auvion.app" target="_blank" rel="noopener">Log in</a>
+      <a class="auvion-cta" href="build.html">
+        <span>Build my app</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- STAGE -->
+<main class="booked-stage">
+  <div class="booked-seal" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M5 13 L10 18 L19 6"/></svg>
+  </div>
+
+  <span class="eyebrow">Booking confirmed</span>
+
+  <h1>Thank you — <em>you're booked.</em></h1>
+
+  <p class="lede">We've got your call on the calendar. While you wait, here's a short walkthrough of how Auvion turns your clinic into a 24/7 revenue engine.</p>
+
+  <div class="video-tag" aria-hidden="true">
+    <span class="word">Please watch before your call</span>
+  </div>
+
+  <div class="video-frame">
+    <div class="video-aspect">
+      <iframe
+        src="https://www.youtube.com/embed/066g9DZYeA4?si=knHKnPRqDwNslVYO"
+        title="How Auvion works"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <p class="video-caption">A quick breakdown of the four pillars and what your patients will see.</p>
+
+  <div class="booked-actions">
+    <a class="ghost-link" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to home
+    </a>
+    <a class="ghost-link" href="mailto:artin@auvion.app">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 5l9 7 9-7"/></svg>
+      Questions before the call?
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">AUVION</div>
+        <p class="footer-tag">Your clinic, in every patient's pocket.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="https://intercom.help/patient-app-54dd6527d833/en/" target="_blank" rel="noopener">Help articles</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-right">
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:artin@auvion.app">artin@auvion.app</a>
+        </div>
+        <div>© 2026 Auvion, Inc. — Made with quiet intent.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  for (const btn of document.querySelectorAll('.auvion-cta')) {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.setProperty('--mx', '30%');
+      btn.style.setProperty('--my', '0%');
+    });
+  }
+</script>
+
+</body>
+</html>
